@@ -1,0 +1,63 @@
+@import "reset";
+
+/* VARS */
+@maincolor:#f62d30;
+@basesize:13px;
+
+
+/* FUNCTIONS */
+.insertpie(){
+	behavior: url(/PIE.htc);
+}
+
+.inline-block(){
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.border-radius (@topleft, @topright, @bottomright, @bottomleft) {
+	-moz-border-radius-topleft: @topleft;
+	-moz-border-radius-topright: @topright;
+	-moz-border-radius-bottomright: @bottomright;
+	-moz-border-radius-bottomleft: @bottomleft;
+	-webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+	border-radius: @topleft @topright @bottomright @bottomleft;
+}
+
+.box-shadow(@topleft, @topright, @bottomright, @bottomleft, @color){
+	-webkit-box-shadow: @topleft @topright @bottomright @bottomleft @color;
+	-moz-box-shadow: @topleft @topright @bottomright @bottomleft @color;
+	box-shadow: @topleft @topright @bottomright @bottomleft @color;
+}
+
+.border-box(){
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clearself(){
+	&:before, &:after { content: ""; display: table; }
+	&:after { clear: both; }
+	*zoom: 1;
+}
+
+
+/* ==|== primary styles =====================================================
+   Author: 
+   ========================================================================== */
+
+::-moz-selection { background: #45413b; color: #fff; text-shadow: none; }
+::selection { background: #45413b; color: #fff; text-shadow: none; }
+
+body{
+	background:#4b4e50 url(../img/mainbg.jpg) 50% 0 no-repeat;
+	font-size:@basesize;
+	font-family:"Open Sans", Helvetica, sans-serif;
+}
+
+
+@import "helpers";
+@import "tabs";
+@import "print";
